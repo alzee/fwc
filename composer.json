@@ -1,0 +1,19 @@
+{
+    "name": "alzee/fwc",
+    "type": "library",
+    "description": "The Fucking WeCom SDK.",
+    "homepage": "https://github.com/alzee/fwc",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alzee\\Fwc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Al Zee",
+            "email": "z@alz.ee"
+        }
+    ],
+    "require": {}
+}
