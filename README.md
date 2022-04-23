@@ -1,4 +1,4 @@
-# The Fucking WeCom SDK
+# The Fucking WeCom/wework SDK
 
 ```
 composer req alzee/fwc
