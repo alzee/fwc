@@ -15,5 +15,8 @@
             "email": "z@alz.ee"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/dotenv": "6.0.*",
+        "symfony/http-client": "6.0.*"
+    }
 }
