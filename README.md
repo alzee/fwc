@@ -1,4 +1,4 @@
-# php sdk for  The Fucking WeCom/wework
+# php sdk for the Fucking WeCom/wework
 
 ## Under development, **DO NOT** use it yet.
 
