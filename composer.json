@@ -1,7 +1,7 @@
 {
     "name": "alzee/fwc",
     "type": "library",
-    "description": "The Fucking WeCom SDK.",
+    "description": "php sdk for the Fucking WeCom/wework",
     "homepage": "https://github.com/alzee/fwc",
     "license": "MIT",
     "autoload": {
