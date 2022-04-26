@@ -21,7 +21,7 @@ class Contacts
 
     public function listTags()
     {
-        $api =  "/tag/list";
+        $api = "/tag/list";
         $query = "?access_token=$this->token";
         $data = Fwc::request($api . $query);
         if ($data->errcode === 0) {
@@ -33,7 +33,7 @@ class Contacts
 
     public function addUserToTag($tid, $users = [])
     {
-        $api =  "/tag/addtagusers";
+        $api = "/tag/addtagusers";
         $query = "?access_token=$this->token";
         $body = [
             "tagid" => $tid,
@@ -50,7 +50,7 @@ class Contacts
 
     public function delUserFromTag($tid, $users = [])
     {
-        $api =  "/tag/deltagusers";
+        $api = "/tag/deltagusers";
         $query = "?access_token=$this->token";
         $body = [
             "tagid" => $tid,
