@@ -16,7 +16,7 @@ class Fwc
 {
     private $API_URL = "https://qyapi.weixin.qq.com/cgi-bin";
     
-    public function __construct($corpid, )
+    public function __construct()
     {
     }
 
