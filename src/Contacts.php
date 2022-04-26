@@ -19,7 +19,7 @@ class Contacts
         $this->token = $token;
     }
 
-    public function list()
+    public function listTags()
     {
         $api =  "/tag/list";
         $query = "?access_token=$this->token";
@@ -30,5 +30,38 @@ class Contacts
             return $data;
         }
     }
-}
 
+    public function addUserToTag($tid, $users = [])
+    {
+        $api =  "/tag/addtagusers";
+        $query = "?access_token=$this->token";
+        $body = [
+            "tagid": $tid,
+            "userlist": $users,
+            // "partylist": []
+        ];
+        $data = Fwc::request($api . $query, $body);
+        if ($data->errcode === 0) {
+            return $data;
+        } else {
+            return $data;
+        }
+    }
+
+    public function delUserFromTag($tid, $users = [])
+    {
+        $api =  "/tag/deltagusers";
+        $query = "?access_token=$this->token";
+        $body = [
+            "tagid": $tid,
+            "userlist": $users,
+            // "partylist": []
+        ];
+        $data = Fwc::request($api . $query, $body);
+        if ($data->errcode === 0) {
+            return $data;
+        } else {
+            return $data;
+        }
+    }
+}
