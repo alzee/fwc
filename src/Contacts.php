@@ -13,21 +13,19 @@ use Alzee\Fwc\Fwc;
 class Contacts
 {
     private $token;
-    private $API_URL;
     
     public function __construct($token)
     {
         $this->token = $token;
-        $this->API_URL = FWC::$API_URL;
     }
 
     public function list()
     {
         $api =  "/tag/list";
-        $query = "?access_token=$token";
-        $data = $this->request($api . $query);
+        $query = "?access_token=$this->token";
+        $data = Fwc::request($api . $query);
         if ($data->errcode === 0) {
-            return $data->access_token;
+            return $data->taglist;
         } else {
             return $data;
         }

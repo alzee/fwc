@@ -14,7 +14,6 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class Fwc
 {
-    private $API_URL = "https://qyapi.weixin.qq.com/cgi-bin";
     
     public function __construct()
     {
@@ -32,8 +31,9 @@ class Fwc
         }
     }
 
-    public function request($api, $body = null, $method = 'GET')
+    public static function request($api, $body = null, $method = 'GET')
     {
+        $API_URL = "https://qyapi.weixin.qq.com/cgi-bin";
         $httpClient = HttpClient::create();
         $headers = [];
 
@@ -49,7 +49,7 @@ class Fwc
 
         $response = $httpClient->request(
             $method,
-            $this->API_URL . $api,
+            $API_URL . $api,
             $payload
         );
 
