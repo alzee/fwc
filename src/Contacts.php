@@ -8,20 +8,29 @@
 
 namespace Alzee\Fwc;
 
-// use What;
+use Alzee\Fwc\Fwc;
 
 class Contacts
 {
-    private $a;
-    private $b;
-    private $c;
+    private $token;
+    private $API_URL;
     
-    public function __construct()
+    public function __construct($token)
     {
+        $this->token = $token;
+        $this->API_URL = FWC::$API_URL;
     }
 
-    public function __destruct()
+    public function list()
     {
+        $api =  "/tag/list";
+        $query = "?access_token=$token";
+        $data = $this->request($api . $query);
+        if ($data->errcode === 0) {
+            return $data->access_token;
+        } else {
+            return $data;
+        }
     }
 }
 

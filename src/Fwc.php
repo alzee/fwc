@@ -16,7 +16,7 @@ class Fwc
 {
     private $API_URL = "https://qyapi.weixin.qq.com/cgi-bin";
     
-    public function __construct()
+    public function __construct($corpid, )
     {
     }
 
@@ -24,11 +24,11 @@ class Fwc
     {
         $api = "/gettoken";
         $query = "?corpid=$corpid&corpsecret=$secret";
-        $response = $this->request($api . $query);
-        $data = json_decode($response->getContent());
+        $data = $this->request($api . $query);
         if ($data->errcode === 0) {
             return $data->access_token;
         } else {
+            return $data;
         }
     }
 
@@ -53,7 +53,6 @@ class Fwc
             $payload
         );
 
-        // $content = $response->getContent();
-        return $response;
+        return json_decode($response->getContent());
     }
 }
