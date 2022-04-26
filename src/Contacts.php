@@ -31,7 +31,7 @@ class Contacts
         }
     }
 
-    public function addUserToTag($tid, $users = [])
+    public function addUsersToTag($tid, $users = [])
     {
         $api = "/tag/addtagusers";
         $query = "?access_token=$this->token";
@@ -48,7 +48,7 @@ class Contacts
         }
     }
 
-    public function delUserFromTag($tid, $users = [])
+    public function delUsersFromTag($tid, $users = [])
     {
         $api = "/tag/deltagusers";
         $query = "?access_token=$this->token";
