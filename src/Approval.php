@@ -33,4 +33,19 @@ class Approval
             return $data;
         }
     }
+
+    public function getFieldValue($sp_no, $field){
+        $data = $this->getDetail($sp_no);
+        $contents = $data->info->apply_data->contents;
+        $arr = array_column($contents, 'title');
+        $arr = array_column($arr, 0);
+        $arr = array_column($arr, 'text');
+        $index = array_search($field, $arr);
+        $value = match ($contents[$index]->control) {
+            'Textarea' => $contents[$index]->value->text,
+            'Text' => $contents[$index]->value->text,
+            'Number' => $contents[$index]->value->new_number,
+        };
+        return $value;
+    }
 }
