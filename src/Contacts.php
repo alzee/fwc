@@ -36,8 +36,8 @@ class Contacts
         $api =  "/tag/addtagusers";
         $query = "?access_token=$this->token";
         $body = [
-            "tagid": $tid,
-            "userlist": $users,
+            "tagid" => $tid,
+            "userlist" => $users,
             // "partylist": []
         ];
         $data = Fwc::request($api . $query, $body);
@@ -53,8 +53,8 @@ class Contacts
         $api =  "/tag/deltagusers";
         $query = "?access_token=$this->token";
         $body = [
-            "tagid": $tid,
-            "userlist": $users,
+            "tagid" => $tid,
+            "userlist" => $users,
             // "partylist": []
         ];
         $data = Fwc::request($api . $query, $body);
