@@ -43,7 +43,7 @@ class Fwc
             $method = 'POST';
             $payload = [
                 // 'headers' => $headers,
-                'body' => $body
+                'json' => $body
             ];
         }
 
