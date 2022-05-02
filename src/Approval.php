@@ -48,4 +48,24 @@ class Approval
         };
         return $value;
     }
+
+    public function getApplicant($sp_no){
+        $data = $this->getDetail($sp_no);
+        return $data->info->applyer->userid;
+    }
+
+    public function getCcs($sp_no){
+        $data = $this->getDetail($sp_no);
+        $notifyer = $data->info->notifyer;
+        if (empty($notifyer)) {
+            return $notifyer;
+        } else {
+            return $data->info->notifyer[0]->userid;
+        }
+    }
+
+    public function getApprovers($sp_no){
+        $data = $this->getDetail($sp_no);
+        return $data->info->sp_record[0]->details[0]->approver->userid;
+    }
 }
