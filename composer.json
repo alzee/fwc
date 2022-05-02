@@ -17,6 +17,7 @@
     ],
     "require": {
         "symfony/dotenv": "6.0.*",
-        "symfony/http-client": "6.0.*"
+        "symfony/http-client": "6.0.*",
+        "symfony/mime": "^6.0"
     }
 }
