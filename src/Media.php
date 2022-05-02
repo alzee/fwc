@@ -35,18 +35,15 @@ class Media
             'file_field' => DataPart::fromPath($file),
         ];
         $formData = new FormDataPart($formFields);
-        $httpClient->request(
+        $response = $httpClient->request(
             'POST',
-            $API_URL . $api,
+            $API_URL . $api . $query,
             [
                 'headers' => $formData->getPreparedHeaders()->toArray(),
                 'body' => $formData->bodyToIterable(),
             ]
         );
 
-        // $data = Fwc::request($api . $query, $body);
-
-        // return $data;
+        return json_decode($response->getContent());
     }
 }
-
