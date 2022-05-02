@@ -10,7 +10,7 @@ namespace Alzee\Fwc;
 
 use Alzee\Fwc\Fwc;
 
-class Chat
+class Message
 {
     private $token;
     
